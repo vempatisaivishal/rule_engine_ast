@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rule Engine Dashboard</title>
+    <link rel="stylesheet" href="/static/css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Rule Engine Dashboard</h1>
+        </header>
+        
+        <main>
+            <section class="rule-creation">
+                <h2>Create New Rule</h2>
+                <form id="ruleForm">
+                    <div class="form-group">
+                        <label for="ruleName">Rule Name:</label>
+                        <input type="text" id="ruleName" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="ruleDescription">Description:</label>
+                        <textarea id="ruleDescription"></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="ruleString">Rule Definition:</label>
+                        <textarea id="ruleString" required></textarea>
+                        <small>Example: (age > 30 AND department = 'Sales') OR (salary > 50000)</small>
+                    </div>
+                    
+                    <button type="submit">Create Rule</button>
+                </form>
+            </section>
+            
+            <section class="rule-evaluation">
+                <h2>Evaluate Rules</h2>
+                <div class="rule-list">
+                    <h3>Available Rules</h3>
+                    <div id="rulesList"></div>
+                </div>
+                
+                <div class="evaluation-form">
+                    <h3>Test Data</h3>
+                    <textarea id="testData" placeholder='{"age": 35, "department": "Sales", "salary": 60000}'></textarea>
+                    <button id="evaluateBtn">Evaluate Selected Rules</button>
+                </div>
+                
+                <div class="evaluation-result">
+                    <h3>Result</h3>
+                    <div id="evaluationResult"></div>
+                </div>
+            </section>
+        </main>
+    </div>
+    <script src="/static/js/main.js"></script>
+</body>
+</html>
